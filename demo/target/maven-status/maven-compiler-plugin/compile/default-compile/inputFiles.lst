@@ -1,0 +1,11 @@
+C:\Users\fallg\Downloads\demo\demo\src\main\java\com\example\demo\API\controllers\UserController.java
+C:\Users\fallg\Downloads\demo\demo\src\main\java\com\example\demo\API\dto\UserRequestLoginDTO.java
+C:\Users\fallg\Downloads\demo\demo\src\main\java\com\example\demo\API\dto\UserRequestRegistoDTO.java
+C:\Users\fallg\Downloads\demo\demo\src\main\java\com\example\demo\API\dto\UserResponseLoginDTO.java
+C:\Users\fallg\Downloads\demo\demo\src\main\java\com\example\demo\API\dto\UserResponseRegistoDTO.java
+C:\Users\fallg\Downloads\demo\demo\src\main\java\com\example\demo\ApipafApplication.java
+C:\Users\fallg\Downloads\demo\demo\src\main\java\com\example\demo\Domain\Interface\UserServiceInt.java
+C:\Users\fallg\Downloads\demo\demo\src\main\java\com\example\demo\Domain\Models\UserModel.java
+C:\Users\fallg\Downloads\demo\demo\src\main\java\com\example\demo\Domain\Services\UserService.java
+C:\Users\fallg\Downloads\demo\demo\src\main\java\com\example\demo\Infra\Entities\UserEntity.java
+C:\Users\fallg\Downloads\demo\demo\src\main\java\com\example\demo\Infra\Repository\UserRepository.java

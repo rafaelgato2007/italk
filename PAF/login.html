@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #111b21;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: #202c33;
+      padding: 40px;
+      border-radius: 10px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    .login-container h2 {
+      color: #e9edef;
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .input-group label {
+      color: #8696a0;
+      font-size: 14px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 5px;
+      background: #2a3942;
+      color: white;
+    }
+
+    .input-group input:focus {
+      outline: 2px solid #00a884;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background: #00a884;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .footer {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #8696a0;
+    }
+
+    .footer a {
+      color: #00a884;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-container">
+    <h2>Entrar</h2>
+
+    <div class="input-group">
+      <label>Email</label>
+      <input type="email" id="email" placeholder="exemplo@email.com">
+    </div>
+
+    <div class="input-group">
+      <label>Password</label>
+      <input type="password" id="password" placeholder="********">
+    </div>
+
+    <button class="login-btn" id="btnLogin">Login</button>
+
+    <div class="footer">
+      <p>Não tens conta? <a href="registo.html">Criar conta</a></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("btnLogin").addEventListener("click", function() {
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if (!email || !password) {
+        alert("Preenche todos os campos!");
+        return;
+      }
+
+      fetch("http://localhost:8080/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password
+        })
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Login inválido");
+        }
+        return response.json();
+      })
+      .then(data => {
+
+        console.log("RESPOSTA DO BACKEND:", data);
+
+      
+        localStorage.setItem("user", JSON.stringify(data));
+
+        
+        console.log("LOCALSTORAGE GUARDADO:", localStorage.getItem("user"));
+
+        alert("Login feito com sucesso!");
+
+        window.location.href = "chat.html";
+      })
+      .catch(error => {
+        console.error(error);
+        alert("Email ou password errados!");
+      });
+
+    });
+  </script>
+
+</body>
+</html>
