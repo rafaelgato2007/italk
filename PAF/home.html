@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>italk</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #111111, #272727);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    
+    header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 40px; 
+  background: rgba(0, 0, 0, 0.979);
+  position: fixed;
+  width: 100%;
+  height: 70px; 
+  backdrop-filter: blur(5px);
+}
+    
+
+
+.logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      height: 90px;
+      width: auto;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      color: #00c26f;
+      margin: 0;
+    }
+
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 0 40px;
+      text-align: left;
+      gap: 50px;
+    }
+
+    .hero-text {
+      max-width: 500px;
+    }
+
+    .hero h2 {
+      font-size: 2.6rem;
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      opacity: 0.85;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background: #00c26f;
+      padding: 12px 28px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      color: black;
+      font-weight: 600;
+      transition: 0.25s;
+    }
+
+    .btn:hover {
+      background: #00e987;
+      transform: scale(1.06);
+    }
+
+  .phone {
+  width: 300px;
+  height: 600px;
+  border-radius: 40px;
+  background: #a8a8a8;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(92, 91, 91, 0.7);
+  overflow: visible; 
+}
+
+.phone::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  width: 120px;
+  height: 25px;
+  background: #000;
+  border-radius: 0 0 15px 15px;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  background: black;
+  position: relative;
+}
+
+.phone-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.phone-screen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
+  transform: skewX(-20deg);
+}
+
+.phone-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.side-button {
+  position: absolute;
+  width: 6px;
+  background: #c7c4c4;
+  border-radius: 3px;
+}
+
+
+.volume-up {
+  left: -6px;
+  top: 140px;
+  height: 50px;
+}
+
+.volume-down {
+  left: -6px;
+  top: 200px;
+  height: 50px;
+}
+
+.power-button {
+  right: -6px;
+  top: 180px;
+  height: 90px;
+}
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="lo" class="logo">
+      <h1>italk</h1>
+    </div>
+  </header>
+
+  <section class="hero">
+
+    <div class="hero-text">
+      <h2>Conecta-te ao momento.<br>Fica sempre ligado.</h2>
+
+      <p>
+        italk é uma plataforma leve para conversas em tempo real.
+        Troca mensagens rapidamente, conecta-te com amigos e começa já a falar.
+      </p>
+
+      <button class="btn" onclick="goLogin()">Começar</button>
+    </div>
+<div class="phone">
+
+  <div class="side-button volume-up"></div>
+  <div class="side-button volume-down"></div>
+  <div class="side-button power-button"></div>
+
+  <div class="notch">
+    <div class="camera"></div>
+  </div>
+
+  <div class="phone-screen">
+    <img src="hq720.jpg" alt="screen" />
+  </div>
+
+</div>
+    
+    </div>
+
+  </section>
+
+  <script>
+    function goLogin() {
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>
